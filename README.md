@@ -2,7 +2,7 @@
 
 Give plain Javascript helper functions access to `owner`:
 
-```js
+```gjs
 import { withOwner } from 'with-owner';
 
 const format = withOwner(function(owner, message) {
@@ -33,7 +33,7 @@ Your function will automagically receive `owner` as the first argument. The othe
 
 In typescript, it looks like:
 
-```ts
+```gts
 import { withOwner } from 'with-owner';
 import type Owner from '@ember/owner';
 
