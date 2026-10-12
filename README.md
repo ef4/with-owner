@@ -1,6 +1,20 @@
 # with-owner
 
-[Short description of the addon.]
+Give plain Javascript helper functions access to `owner`:
+
+```js
+import { withOwner } from 'with-owner';
+
+const format = withOwner(function(owner, message) {
+  return owner.lookup('service:locale').format(message);
+});
+
+<template>
+  <h1>{{format "Hello"}}</h1>
+</template>
+```
+
+Build entirely on stable public API (the [HelperManager interface](https://api.emberjs.com/ember/7.3/functions/@ember%2Fhelper/setHelperManager/)).
 
 ## Compatibility
 
@@ -15,17 +29,22 @@ ember install with-owner
 
 ## Usage
 
-[Longer description of how to use the addon in apps.]
+Your function will automagically receive `owner` as the first argument. The other arguments are unchanged from normal helper function invocation.
 
-> TODO: Document the package's public API.
->
-> For each public api (including components, helpers, modifiers, and other apis) include:
->
-> - The import path for a consumer (e.g. `import MyAddonsComponent from 'my-addon/components/my-addons-component'`)
-> - What it does
-> - Parameters/options
-> - Return value
-> - Example usage
+In typescript, it looks like:
+
+```ts
+import { withOwner } from 'with-owner';
+import type Owner from '@ember/owner';
+
+const format = withOwner(function(owner: Owner, message: string): string {
+  return owner.lookup('service:locale').format(message);
+});
+
+<template>
+  <h1>{{format "Hello"}}</h1>
+</template>
+```
 
 ## Contributing
 
