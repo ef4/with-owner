@@ -20,14 +20,6 @@ module.exports = {
         transforms: [],
       },
     ],
-    [
-      'module:decorator-transforms',
-      {
-        runtime: {
-          import: 'decorator-transforms/runtime-esm',
-        },
-      },
-    ],
   ],
 
   generatorOpts: {
