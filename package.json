@@ -10,7 +10,7 @@
     "url": "https://github.com/ef4/with-owner.git"
   },
   "license": "MIT",
-  "author": "",
+  "author": "Edward Faulkner <edward@eaf4.com>",
   "imports": {
     "#src/*": "./src/*"
   },
